@@ -75,9 +75,9 @@ def lid_class(request):
                 if len(u)>1 and '.' not in u and any(v in u for v in vogais):
                     is_fem.append(lid_fem(u))
             if 'Yes' in is_fem:
-                return {'femLeadership' : 'Yes'}
+                return {'femLeadership' : 'Yes', 'percFeminine': is_fem.count('Yes')/len(is_fem)}
             else:
-                return {'femLeadership' : 'No'}
+                return {'femLeadership' : 'No', 'percFeminine': 0}
     except:
 
         return { 'Error' : 'Bad Request.'}
