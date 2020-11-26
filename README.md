@@ -7,18 +7,11 @@ Para construir o modelo utilizamos uma base do IBGE que já tem classificação 
 Para o funcionamento do projeto, deve-se instalar as seguintes bibliotecas no Python3:
 
 ```
-pdf2image # conda install -c conda-forge poppler OR https://zoomadmin.com/HowToInstall/UbuntuPackage/poppler-utils
-pytesseract 
-opencv-python # OpenCV (cv2) apt install -y libsm6
 matplotlib
 fuzzywuzzy
 numpy
-imutils
 flask
 flask-cors
-gevent
-dnspython
-awscli
 ```
 
 Após a instalação das bibliotecas, o funcionamento do projeto é simples. As requisições são processadas via [Flask](https://github.com/pallets/flask) e este é encarregado de devolver o modelo em formato JSONO modelo de lideranças femininas fornece as saídas:
