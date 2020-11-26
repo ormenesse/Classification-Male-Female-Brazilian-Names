@@ -28,4 +28,4 @@ legRep -> nome dos sócios (legalRepresentatives no Mongo). Caso não haja não 
 
 O link para requisição é:
 
-https://dataservices.gyramais.com.br/lidfem?legName=<Nome da Empresa ou dono>&legRep=<Nome dos sócios>
+https://dataservices.gyramais.com.br/lidfem?legName=< Nome da Empresa ou dono >&legRep=<Nome dos sócios>
