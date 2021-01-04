@@ -1,37 +1,22 @@
 from flask import Flask, request, redirect, url_for, flash, jsonify, abort
 import pandas as pd
 from lf_functions import *
+import os
 import gc
 
+port = int(os.environ.get("PORT", 5000))
+
 app = Flask(__name__)
-CORS(app) #Prevents CORS errors
+#CORS(app) #Prevents CORS errors
 
-@app.route('/etls/<legalName>/<legalRepresentatives>', methods=['GET'])
+@app.route('/lidfem', methods=['GET'])
 
-def lid_fem_class(legalName,legalRepresentatives):
+def lid_fem_class():
 
     gc.collect()
-
-    leg_rep = legalRepresentatives
-    leg_name = legalName
-
-    vogais = ['A','a','E','e','I','i','O','o','U','u']
-
-        if leg_rep!=leg_rep:
-            u = leg_name.split()[0]
-            if len(u)>1 and '.' not in u and any(v in u for v in vogais):
-                lid_fem = lid_fem(u)
-            else:
-                lid_fem = np.nan
-        else:
-            for x in leg_rep.split(','):
-                u = x.split('-')[1].split()[0]
-                if len(u)>1 and '.' not in u and any(v in u for v in vogais):
-                    lid_fem = lid_fem(u)
-                else:
-                    lid_fem = np.nan
     
-    return jsonify({'legalName' : leg_name, 'legalRepresentatives' : leg_rep, 'liderançaFeminina' : lid_fem})
+    return jsonify(lid_class(request))
 
-    if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+if __name__ == '__main__':
+    
+    app.run(debug=True, host='0.0.0.0',port=port)
