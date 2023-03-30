@@ -7,7 +7,7 @@ metadata:
   labels:
     app: lidfem-app
   name: lidfem-app
-  namespace: default
+  namespace: data-science
   resourceVersion: "440723924"
   uid: 3ac87e4f-b8fe-4472-a5c9-242728bc8e09
 spec:
@@ -24,7 +24,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: lidfem-app
     spec:
@@ -40,22 +39,3 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-status:
-  availableReplicas: 1
-  conditions:
-  - lastTransitionTime: "2021-02-22T17:11:39Z"
-    lastUpdateTime: "2021-02-22T17:12:00Z"
-    message: ReplicaSet "lidfem-app-97df6d4d4" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  - lastTransitionTime: "2022-12-23T19:23:10Z"
-    lastUpdateTime: "2022-12-23T19:23:10Z"
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  observedGeneration: 1
-  readyReplicas: 1
-  replicas: 1
-  updatedReplicas: 1
