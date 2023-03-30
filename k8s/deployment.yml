@@ -30,7 +30,7 @@ spec:
       containers:
       - image: 941961614774.dkr.ecr.us-west-2.amazonaws.com/lidfem-app:latest
         imagePullPolicy: IfNotPresent
-        name: lidfemapp
+        name: lidfem-app
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
