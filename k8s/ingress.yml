@@ -21,6 +21,6 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: lidfem-app-internal-service
+              name: lidfem-app-service
               port:
                 number: 80

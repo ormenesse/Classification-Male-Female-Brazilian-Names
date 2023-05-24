@@ -7,16 +7,14 @@ metadata:
     app: lidfem-app
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-type: alb
-    alb.ingress.kubernetes.io/healthcheck-path: /healthz
+    alb.ingress.kubernetes.io/healthcheck-path: /lidfem
 spec:
   type: ClusterIP
   selector:
     app: lidfem-app
-    component: deployment
   ports:
     - protocol: TCP
-      #name:
       port: 80
-      targetPort: 80
+      targetPort: 5000
 
 
