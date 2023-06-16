@@ -10,12 +10,9 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-path: /lidfem
 spec:
   type: ClusterIP
-  selector:
-    app: lidfem-app
-    component: deployment
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-
-
+  selector:
+    app: lidfem-app
