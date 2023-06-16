@@ -13,9 +13,15 @@ spec:
       labels:
         app: lidfem-app
     spec:
+      terminationGracePeriodSeconds: 70
       containers:
         - name: lidfem-app
           image: 881379168558.dkr.ecr.us-west-2.amazonaws.com/lidfem-app:latest
+          imagePullPolicy: Always
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sleep","40"]
           resources:
             limits:
               cpu: "500m"
