@@ -8,13 +8,13 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/group.name: gyramais
     alb.ingress.kubernetes.io/load-balancer-name: gyramais-alb
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:941961614774:certificate/e6d1e700-6adc-4e56-a67f-2a9e913ddeb5
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:881379168558:certificate/10a6a42f-bdff-4dbf-91cc-89e68eb75b3d
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
 spec:
   ingressClassName: alb
   rules:
-    - host: lidfem-app.hmg.gyramais.com.br
+    - host: lidfem-app-prod.hmg.gyramais.com.br
       http:
         paths:
         - path: /

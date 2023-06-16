@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: lidfem-app-service
-  namespace: data-science
+  namespace: default
   labels:
     app: lidfem-app
   annotations:
@@ -12,9 +12,10 @@ spec:
   type: ClusterIP
   selector:
     app: lidfem-app
+    component: deployment
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 5000
+      targetPort: 80
 
 
